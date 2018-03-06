@@ -29,3 +29,15 @@
     git checkout -b feature-branch    //创建并切换到分支feature-branch  
     git push origin feature-branch:feature-branch //推送本地的feature-branch(冒号前面的)分支到远程origin的feature-branch
 ```
+## 查看远程分支
+```
+    git branch -r
+```
+## 拉取远程分支并创建本地分支
+```
+    //方式一
+    git checkout -b 本地分支名x origin/远程分支名x
+    //方式二
+    git fetch origin 远程分支名x:本地分支名x
+    git checkout 分支名x
+```
