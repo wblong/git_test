@@ -41,3 +41,47 @@
     git fetch origin 远程分支名x:本地分支名x
     git checkout 分支名x
 ```
+## 合并两个提交
+
+```
+  //查看提交历史
+  git log
+  //合并936bf0d之前的提交
+  git rebase -i 936bf0d
+  //或者,从当前向后数两个版本
+  git rebase -i HEAD~2
+  //在弹出的编辑窗口中修改pick为s,第一个无须修改
+  pick 3ca6ec3   '注释**********'
+  s    1b40566   '注释*********'
+  //放弃合并
+  git rebase --abort
+  //如果出现冲突后
+  git add .
+  git rebase --continue
+
+```
+## 新建分支与合并分支
+```
+    //新建分支iss53,并切换到iss53
+    git checkout -b iss53
+    //一下两条命令等同于上面一条
+    git branch iss53
+    git checkout iss53
+    git commit -a -m "iss53 is going..."
+    //解决主分支上的紧急问题
+    git checkout master
+    git checkout -b hotfix
+    git commit -a -m 'hotfix is solved'
+    //切换到主分支，并将hotfix合并到主分支上,删除hotfix分支
+    git checkout master
+    git merge hotfix
+    git branch -d hotfix
+    //切换到iss53分支
+    git checkout iss53
+    git commit -a -m 'finished the new footer [issue 53]'
+    //合并#53到master分支
+    git checkout master
+    git merge iss53
+    //分支已经合并到主分支，删除原分支
+    git branch -d iss53
+```
