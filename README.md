@@ -11,8 +11,8 @@
     git checkout .
     //暂存区的目录树会被重写，被 master 分支指向的目录树所替换
     git reset HEAD
-    //会直接从暂存区删除文
-    git rm –cached
+    //会直接从暂存区删除文件
+    git rm –-cached
 ```
 ## 撤销暂存区的修改
 ```
@@ -23,8 +23,17 @@
 ## 比较不同
 ```
    //比较版本库与工作区的不同
-    git diff HEAD -- readme.txt
-
+   // git diff HEAD -- readme.txt
+   // 工作区与暂存区的比较
+   git diff filename
+   //工作区与HEAD比较
+   git diff HEAD filename
+  //!暂存区与HEAD比较 error
+  //git diff --stage filename 
+  //当前分支与另一分支比较
+  git diff branchname filename
+  // 与某一次提交比较
+  git diff commitId filename
 ```
 ## 添加到远程版本库
 ```
