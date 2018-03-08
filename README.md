@@ -118,3 +118,7 @@
     //分支已经合并到主分支，删除原分支
     git branch -d iss53
 ```
+## 克隆远程版本库的某一分支
+```
+    git clone -b <branch name> [remote repository address]
+```
