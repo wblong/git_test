@@ -122,3 +122,8 @@
 ```
     git clone -b <branch name> [remote repository address]
 ```
+## git submodule
+```
+git submodule add git@github.com:huiGod/git_child.git mymodule
+
+```
