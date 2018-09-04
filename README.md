@@ -128,5 +128,4 @@ git submodule add git@github.com:huiGod/git_child.git mymodule
 git submodule init
 git submodule sync
 git submodule update
-
 ```
